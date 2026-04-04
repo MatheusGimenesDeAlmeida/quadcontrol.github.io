@@ -61,8 +61,10 @@ jobs:
           cp -r landing/dist/videos/* site/videos/ 2>/dev/null || true
           cp landing/dist/*.mp4 site/ 2>/dev/null || true
 
-          # Fix asset paths: replace base+assets with base+landing-assets
+          # Fix asset paths in index.html AND in JS bundles
+          # Images and other assets are referenced inside the JS file too
           sed -i 's|/quadcontrol.github.io/assets/|/quadcontrol.github.io/landing-assets/|g' site/index.html
+          sed -i 's|/quadcontrol.github.io/assets/|/quadcontrol.github.io/landing-assets/|g' site/landing-assets/*.js
 
       # 5. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
