@@ -40,7 +40,9 @@ jobs:
 
       - name: Build landing page
         working-directory: landing
-        run: npx vite build
+        run: |
+          chmod +x node_modules/.bin/vite
+          npx vite build
         env:
           VITE_BASE_PATH: "/"
 
