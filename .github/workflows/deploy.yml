@@ -28,7 +28,6 @@ jobs:
 
       - name: Build MkDocs site
         run: mkdocs build
-        # Output: site/ with all docs pages (setup/, fundamentals/, control/, etc.)
 
       # 3. Build Landing Page (React/Vite) → generates landing/dist/
       - uses: actions/setup-node@v4
@@ -41,15 +40,11 @@ jobs:
 
       - name: Build landing page
         working-directory: landing
-        run: npm run build
+        run: npx vite build
         env:
           VITE_BASE_PATH: "/"
 
       # 4. Combine: landing page overwrites the MkDocs index
-      #    - Landing's index.html replaces MkDocs' index.html (the home page)
-      #    - Landing's assets (images, CSS, JS) go into site/landing-assets/
-      #      to avoid conflicts with MkDocs' own assets/ folder
-      #    - Videos are copied to site root
       - name: Combine landing page with docs
         run: |
           # Copy landing page's main HTML as the site root
