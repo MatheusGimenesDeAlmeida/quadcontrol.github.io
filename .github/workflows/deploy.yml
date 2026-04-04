@@ -49,6 +49,10 @@ jobs:
       # 4. Combine: landing page overwrites the MkDocs index
       - name: Combine landing page with docs
         run: |
+          # Preserve the full MkDocs output under /course (including original docs home)
+          mkdir -p site/course
+          find site -mindepth 1 -maxdepth 1 ! -name course -exec cp -r {} site/course/ \;
+
           # Copy landing page's main HTML as the site root
           cp landing/dist/index.html site/index.html
 
