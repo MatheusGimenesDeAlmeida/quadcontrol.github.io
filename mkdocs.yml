@@ -14,7 +14,7 @@ theme:
   palette:
     - scheme: slate                    # Tema escuro pronto do Material
   features:
-    - content.code.copy                # Botão “copiar” nos blocos de código
+    - content.code.copy                # Botão "copiar" nos blocos de código
     - content.code.title               # Título nos blocos de código (```python title="..."```)
     - navigation.indexes               # Usa index.md como landing de cada seção
     - content.tabs.link
@@ -46,7 +46,7 @@ extra_javascript:
   - assets/js/disable-parent-click.js  # Script custom (evitar cliques no pai, etc.)
 
 nav:
-  - Home: index.md
+  - Home: home.md
   - Setup:
       - setup/index.md
       - Hardware: setup/hardware.md
