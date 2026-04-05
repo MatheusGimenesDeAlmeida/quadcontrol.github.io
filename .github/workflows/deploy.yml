@@ -58,7 +58,7 @@ jobs:
 
           # Copy landing assets to a separate folder to avoid conflicts
           mkdir -p site/landing-assets
-          cp -r landing/dist/assets/* site/landing-assets/
+          cp -r landing/dist/assets/* site/landing-assets/ 
 
           # Copy videos
           mkdir -p site/videos
