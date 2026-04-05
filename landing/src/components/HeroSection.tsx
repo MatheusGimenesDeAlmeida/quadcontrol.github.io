@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   const baseUrl = import.meta.env.BASE_URL;
   const normalizedBaseUrl = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
-  const courseSectionUrl = `${normalizedBaseUrl}course/`;
+  const courseSectionUrl = `${normalizedBaseUrl}setup/`;
   const heroVideoSrc = `${normalizedBaseUrl}videos/hero-drone.mp4`;
 
   return (
